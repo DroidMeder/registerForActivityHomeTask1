@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">KotlinLesson1</string>
+    <string name="type_text">Введите текст</string>
+    <string name="send_data">Отправить данные</string>
+    <string name="there_is_nothing">Вы хотите отправить то, сами не зная что</string>
+</resources>
