@@ -12,6 +12,7 @@
         android:id="@+id/et_some_text"
         style="@style/TextView.Base"
         android:hint="@string/type_text"
+
         android:importantForAutofill="no"
         android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
