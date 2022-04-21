@@ -1,4 +1,4 @@
-package kg.geekteck.kotlinlesson1
+package kg.geekteck.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -7,10 +7,13 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import kg.geekteck.kotlinlesson1.App
+import kg.geekteck.kotlinlesson1.constants.Constants.KEY_FIRST_ACTIVITY
+import kg.geekteck.kotlinlesson1.constants.Constants.KEY_SECOND_ACTIVITY
+import kg.geekteck.kotlinlesson1.R
 import kg.geekteck.kotlinlesson1.databinding.ActivityMainBinding
+import kg.geekteck.kotlinlesson1.models.History
 
-const val KEY_FIRST_ACTIVITY: String = "main1"
-const val KEY_SECOND_ACTIVITY: String = "main2"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -40,7 +43,17 @@ class MainActivity : AppCompatActivity() {
     private fun openSomeActivityForResult() {
         val intent = Intent(this, MainActivity2::class.java)
         intent.putExtra(KEY_FIRST_ACTIVITY, binding.etSomeText.text.toString())
+        saveForHistory()
         resultLauncher.launch(intent)
+    }
+
+    private fun saveForHistory() {
+        val history = History(
+            createdAt = System.currentTimeMillis(),
+            content = binding.etSomeText.text.toString()
+        )
+        App.database!!.historyDao().insertHistory(history)
+        println("==="+App.database!!.historyDao().getAllHistory().size)
     }
 
     private var resultLauncher = registerForActivityResult(

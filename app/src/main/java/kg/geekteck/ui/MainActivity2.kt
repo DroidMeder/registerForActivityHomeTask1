@@ -1,10 +1,15 @@
-package kg.geekteck.kotlinlesson1
+package kg.geekteck.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kg.geekteck.kotlinlesson1.App
+import kg.geekteck.kotlinlesson1.constants.Constants.KEY_FIRST_ACTIVITY
+import kg.geekteck.kotlinlesson1.constants.Constants.KEY_SECOND_ACTIVITY
+import kg.geekteck.kotlinlesson1.R
 import kg.geekteck.kotlinlesson1.databinding.ActivityMain2Binding
+import kg.geekteck.kotlinlesson1.models.History
 
 class MainActivity2 : AppCompatActivity() {
     private lateinit var binding: ActivityMain2Binding
@@ -17,14 +22,19 @@ class MainActivity2 : AppCompatActivity() {
         sendData()
     }
 
-    private fun sendData() {
-        binding.btnSendTo.setOnClickListener{
-            if (binding.etSomeText.text.isNullOrEmpty()){
-                Toast.makeText(this, R.string.there_is_nothing,
+    private fun sendData() = with(binding){
+        btnSendTo.setOnClickListener{
+            if (etSomeText.text.isNullOrEmpty()){
+                Toast.makeText(this@MainActivity2, R.string.there_is_nothing,
                     Toast.LENGTH_LONG).show()
             }else {
-                sendMessage(binding.etSomeText.text.toString())
+                sendMessage(etSomeText.text.toString())
             }
+        }
+
+        btnThirdFragment.setOnClickListener{
+            val intent = Intent(this@MainActivity2, ListActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -41,11 +51,20 @@ class MainActivity2 : AppCompatActivity() {
         val data = Intent()
         data.putExtra(KEY_SECOND_ACTIVITY, message)
         setResult(RESULT_OK, data)
+        saveForHistory(message)
         finish()
     }
 
     override fun onBackPressed() {
         sendMessage(binding.etSomeText.text.toString())
         super.onBackPressed()
+    }
+
+    private fun saveForHistory(message: String) {
+        val history = History(
+            createdAt = System.currentTimeMillis(),
+            content = message
+        )
+        App.database!!.historyDao().insertHistory(history)
     }
 }

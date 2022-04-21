@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/KotlinLesson1/app/src/main/res/drawable/line.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/KotlinLesson1/app/src/main/res/layout/activity_list.xml" value="0.2046875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/KotlinLesson1/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/KotlinLesson1/app/src/main/res/layout/activity_main2.xml" value="0.1875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/KotlinLesson1/app/src/main/res/layout/fragment_first.xml" value="0.2046875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/KotlinLesson1/app/src/main/res/layout/fragment_second.xml" value="0.2046875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/KotlinLesson1/app/src/main/res/layout/item.xml" value="0.536" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/KotlinLesson1/app/src/main/res/layout/sample.xml" value="0.2046875" />
       </map>
     </option>

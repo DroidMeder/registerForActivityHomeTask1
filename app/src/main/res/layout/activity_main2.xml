@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     android:layout_marginHorizontal="@dimen/margin_horizontal_12dp"
     android:background="@color/teal_700"
-    tools:context=".MainActivity2">
+    tools:context="kg.geekteck.ui.MainActivity2">
 
     <EditText
         android:id="@+id/et_some_text"
         style="@style/TextView.Base"
         android:hint="@string/type_text"
-
         android:importantForAutofill="no"
         android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,4 +26,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_some_text"/>
+
+    <Button
+        android:id="@+id/btn_third_fragment"
+        style="@style/Button.Base"
+        android:layout_marginTop="@dimen/margin_top_16dp"
+        android:text="@string/history"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_send_to"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

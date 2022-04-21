@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">KotlinLesson1</string>
+    <string name="app_name">KotlinLesson!</string>
     <string name="type_text">Введите текст</string>
     <string name="send_data">Отправить данные</string>
     <string name="there_is_nothing">Вы хотите отправить то, сами не зная что</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="history">History</string>
+    <string name="title">Title</string>
+    <string name="time">time</string>
+    <string name="clean_cash">Clean cash</string>
 </resources>
